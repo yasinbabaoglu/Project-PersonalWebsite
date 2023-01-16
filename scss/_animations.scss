@@ -1,0 +1,63 @@
+@keyframes moveDown {
+
+    0%{
+        transform: translateY(-100%);
+        color: transparentize($primary-color, 1);
+
+    }
+    50%{
+        transform: translateY(-100%);
+        color: transparentize($primary-color, 1);
+
+    }
+    
+    100%{
+        transform: translateY(0);
+        color: transparentize($font-color-header, 0);
+
+    }
+    
+}
+@keyframes moveUpBtn {
+
+    0%{
+        transform: translateY(100%);
+
+    }
+    
+    100%{
+        transform: translateY(0);
+
+    }
+    
+}
+
+@keyframes scaleArrow {
+    0%{
+        transform: scale(1.1);
+    }
+    
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes showLeftLogo-font {
+    0% {
+         transform: translate3d(100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0); 
+    }
+  }
+
+
+@keyframes moveLeftLogo{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+        
+    }
+}

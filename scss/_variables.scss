@@ -1,0 +1,14 @@
+$primary-color: #237C56;
+$secondary-color: #C9EFC7;
+$font-color: #454545;
+$font-color-header: #1d452f;
+
+$primary-color-transparent: transparentize(#237C56, 0.65);
+$secondary-color-transparent: transparentize(#C9EFC7, 0.65);
+
+@font-face {
+    font-family: Bungee Shade Regular;
+    src: url(/jason-fonts/fonts/Bungee\ Shade\ Regular.ttf);
+}
+$font-family-nav: Bungee Shade Regular, sans-serif;
+$font-family-header: 'PT Mono', monospace;

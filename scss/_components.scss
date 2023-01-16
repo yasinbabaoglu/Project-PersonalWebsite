@@ -1,0 +1,118 @@
+.logo{
+    display: flex;
+    justify-content: center;
+    @include responsive(desktop){
+        transform: translateX(30vw);
+        animation: moveLeftLogo 1s forwards;
+        
+    }
+    &-head{
+        transform: translateX(-4px);
+
+        &__item{
+            height: 3.5rem;
+            width: fit-content;   
+            
+        }
+    }
+    
+    &-font{
+        overflow: hidden;
+        &__item{    
+            height: 3.5rem;
+            animation: showLeftLogo-font 1s;
+            animation-fill-mode: forwards;
+        }
+
+    }
+}
+
+.header-title{
+    font-family: $font-family-header;
+    color: $font-color-header ;
+    font-size: 2rem;
+    animation: moveDown 1s;
+}
+.header-subtitle{
+    font-family: $font-family-header;
+    color: $font-color-header ;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    animation: moveDown 1s;
+}
+.btn{
+    text-decoration: none;
+    font-family: $font-family-header;
+    color: $font-color-header ;
+    background-color: $secondary-color ;
+    border-radius: 100px;
+    padding: .25rem 1rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    animation: moveUpBtn 1s;
+    &:hover{
+        background-color: darken($secondary-color, 15);
+        box-shadow: 0 0 8px 0 darken($secondary-color, 60);
+    }
+}
+.form-btn{
+    background-color: $primary-color;
+    color: $secondary-color;
+    margin: 0.5rem;
+    font-size: 1.2rem;
+    &:hover{
+        color: $primary-color;
+    }
+}
+.icon-down{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 1rem;
+    animation: scaleArrow 1s alternate  infinite;
+}
+.portfolio-card{
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid $secondary-color;
+    border-radius: 0.5rem;
+    background-image: url(/jason-logo/background.png);
+    background-size: cover;
+    transition: 0.5s ease-in-out;
+    flex: 1;
+    &:hover{
+        transform: scale(1.05);
+        transition: 0.5s ease-in-out ;
+    }
+    &__name{
+        padding: .5rem;
+    }
+    &__duration{
+        padding: 0.5rem;
+    }
+    
+}
+#about:target::before{
+    display: block;
+
+    height: 4.5rem;
+    margin-top: -4.5rem;
+
+    content: '';
+    
+}
+#portfolio:target::before{
+    display: block;
+
+    height: 5rem;
+    margin-top: -5rem;
+
+    content: '';
+}
+
+.btn-container{
+    text-align: right;
+}

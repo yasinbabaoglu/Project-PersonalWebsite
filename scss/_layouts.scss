@@ -1,0 +1,150 @@
+.fullscreen-header{
+    height: 100vh;
+    flex-direction: column;
+    @include flexCenter;
+    background-image: linear-gradient(to right bottom, $secondary-color-transparent, $primary-color-transparent), url('/jason-logo/header.jpg');
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.nav{
+    background-color: $secondary-color;
+    padding: .4rem .4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    text-align: center;
+    border-bottom:3px solid $font-color ;
+    @include responsive(small){
+        display: flex;
+        justify-content: space-between;
+    }
+        
+    &__list{
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 1rem;
+
+        &--item{
+            text-decoration: none;
+            color: $font-color;
+            font-family: $font-family-nav ;
+            margin-right: 1rem;
+            position: relative;
+            display: block;
+            margin-bottom: .5rem;
+
+            &::before{
+                content: " ";
+                background-color: $primary-color;
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transform-origin: right;
+                transform: scaleX(0);
+                transition: transform 1s ease-in-out;
+            }
+            
+            &:hover{
+                color: $primary-color;
+                &::before{
+                    transform-origin: left;
+                    transition-timing-function: ease-in-out;
+                    transform: scaleX(1);   
+                }
+            }
+        }
+    }
+}
+
+.section{
+    background-color: $secondary-color;
+    // background-image: url(/jason-logo/background.png);
+    padding: 2rem 1rem;
+    font-family: $font-family-header;
+    color: $font-color;
+    &-title{
+        text-align: center;
+        font-size: 1.8rem;
+        margin: 1.5rem;
+    }
+    &--accent{
+        background-color: $primary-color;
+    }
+}
+
+.about-grid{
+    display: grid;
+    grid-template-columns: minmax(auto, 800px);
+    row-gap: 1rem;
+    &__item{
+        padding: 1rem;
+        @include flexCenter;
+    }
+    &__image{
+        width: 25%;
+        padding: 1rem;
+    }
+    &__text{
+        font-size: 0.9rem;
+    }
+    @include responsive(medium){
+        grid-template-columns: repeat(2, minmax(auto, 500px));
+        justify-content: center;
+    }
+    @include responsive(large){
+        grid-template-columns: repeat(4, minmax(auto, 500px));
+        justify-content: center;
+    }
+    
+}
+
+.portfolio-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+
+    @include responsive(medium){
+        flex-direction: row;
+        max-width: 90%;
+    }
+    @include responsive(desktop){
+        flex-direction: row;
+        max-width: 80%;
+    }
+}
+.form{
+    max-width: 800px;
+    margin:0 auto; 
+    &-label{
+        color: $font-color;
+        font-weight: bold;
+        display: block;
+        margin-top: 1rem;
+    }
+    &-input{
+        width: 100%;
+        margin-top: .25rem;
+        outline: none;
+        border: 1px solid $primary-color;
+        border-radius: .2rem;
+        padding: .4rem;
+        color: inherit;
+        resize: none;
+        &:hover{
+            box-shadow: 0 0 5px 0 $primary-color;
+        }
+        &:focus{
+            box-shadow: 0 0 5px 0 $primary-color;
+            background-color: lighten($secondary-color, 10);
+        }
+    }
+}
